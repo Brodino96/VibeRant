@@ -28,7 +28,7 @@ async function vibrate(value) {
         setTimeout(async () => {
             await device.stop()
             active = false
-        }, value.duration)
+        }, value.duration * 1000)
     })
 }
 
