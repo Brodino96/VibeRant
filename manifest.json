@@ -4,7 +4,7 @@
 
 	"meta":{
 		"name":"VibeRant",
-		"description":"A tool to sync in game valorant events with everything that can vibrate",
+		"description":"A tool give haptic feedback to Valorant (use it as you wish)",
 		"dock_button_title": "VibeRant",
 		
 		"author":"Brodino",
