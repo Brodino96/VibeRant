@@ -1,3 +1,23 @@
 {
-    "debugMode": true
+    "debugMode": true,
+
+    "events": {
+        "kill": {
+            "intensity": 1.0,
+            "duration": 5
+        },
+        "assist": {
+            "intensity": 1.0,
+            "duration": 5
+        },
+        "headshot": {
+            "intensity": 1.0,
+            "duration": 5
+        },
+        "death": {
+            "intensity": 1.0,
+            "duration": 5
+        }
+
+    }
 }
