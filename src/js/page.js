@@ -14,6 +14,18 @@ function updateConfig (value, target) {
     //fs.writeFileSync("/src/config.json", JSON.stringify(Config))
 }
 
+function buttonClicked (btn) {
+    switch (btn) {
+        case "main":
+            if (!intifaceConnect()) {
+                // Notify that it failed
+                return
+            }
+            document.getElementById("main_button").innerHTML = "ON"
+            break
+    }
+}
+
 /* ------------------------------------------------------------------ */
 
 window.addEventListener("load", function () {

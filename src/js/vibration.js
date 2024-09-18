@@ -37,6 +37,8 @@ async function intifaceConnect() {
     client.addListener("deviceremoved", () => {
         Debug.info("Device disconnected")
     })
+
+    return true
 }
 
 async function checkConnections () {
