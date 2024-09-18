@@ -11,7 +11,7 @@ function updateConfig (value, target) {
     target = target.split("_")
     Config.events[target[0]][target[1]] = value
     
-    fs.writeFileSync("/src/config.json", JSON.stringify(Config))
+    //fs.writeFileSync("/src/config.json", JSON.stringify(Config))
 }
 
 /* ------------------------------------------------------------------ */
