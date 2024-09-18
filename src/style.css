@@ -1,96 +1,128 @@
+/* MAIN */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    --background: #151515;
+    --text: #dadada;
+    --main_color: #c922db;
+    --main_color_accent: #f178ff;
+    --main_color_dark: #8b1898;
+    --main_color_shadow: #500f57;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--background);
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* GENERIC */
+
+.generic_text {
+    color: var(--text);
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* From Uiverse.io by adamgiebl */ 
+.generic_button {
+    font-size: 15px;
+    padding: 0.7em 2.7em;
+    margin-bottom: 2em;
+    letter-spacing: 0.06em;
+    position: relative;
+    font-family: inherit;
+    border-radius: 0.6em;
+    overflow: hidden;
+    transition: all 0.3s;
+    line-height: 1.4em;
+    border: 2px solid var(--main_color);
+    background: linear-gradient(to right, var(--main_color_shadow) 1%, transparent 40%,transparent 60% , var(--main_color_shadow) 100%);
+    color: var(--main_color);
+    box-shadow: inset 0 0 10px var(--main_color_dark), 0 0 9px 3px var(--main_color_shadow);
+}
+  
+.generic_button:hover {
+    color: var(--main_color_accent);
+    box-shadow: inset 0 0 10px var(--main_color_dark), 0 0 9px 3px var(--main_color_shadow);
+    cursor: pointer;
+}
+  
+.generic_button:before {
+    content: "";
+    position: absolute;
+    left: -4em;
+    width: 4em;
+    height: 100%;
+    top: 0;
+    transition: transform .4s ease-in-out;
+    background: linear-gradient(to right, transparent 1%, var(--main_color_shadow) 40%,var(--main_color_shadow) 60% , transparent 100%);
+}
+  
+.generic_button:hover:before {
+    transform: translateX(15em);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #3178c6aa);
+/* HEADER */
+
+#header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.card {
-  padding: 2em;
+/* COLUMNS */
+
+#columns {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
 }
 
-.read-the-docs {
-  color: #888;
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 2em;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+/* SLIDERS */
+
+.description_text {
+    text-align: center;
+    font-size: 2em;
+    color: var(--text);
+    font-weight: 400;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.generic_slider {
+    width: 20em;
+    height: 15px;
+    margin-bottom: 2em;
+    -webkit-appearance: none;
+    background: #111;
+    outline: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 1);
+}
+
+.generic_slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: var(--main_color);
+    cursor: pointer;
+    border: 4px solid #333;
+    box-shadow: -407px 0 0 400px var(--main_color);
 }
