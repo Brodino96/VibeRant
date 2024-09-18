@@ -1,9 +1,16 @@
 /* ------------------------------------------------------------------ */
 
-Debug = new debug()
+const Debug = new debug()
 const Config = require("../config.json")
 
 /* ------------------------------------------------------------------ */
+
+window.addEventListener("load", function () {
+    Debug.info("Page loaded")
+})
+
+/* ------------------------------------------------------------------ */
+
 
 class debug {
     success (str) { if (Config.debugMode) { console.log(`[SUCCESS] ${str}`) } }

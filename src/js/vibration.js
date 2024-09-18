@@ -5,12 +5,6 @@ let active = false
 
 /* ------------------------------------------------------------------ */
 
-window.addEventListener("load", function () {
-    Debug.info("Page loaded")
-})
-
-/* ------------------------------------------------------------------ */
-
 async function vibrate(value) {
 
     Debug.info(`Intensity: ${value.intensity}, duration: ${value.duration}`)
