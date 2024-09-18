@@ -3,12 +3,12 @@
 
     "events": {
         "kill": {
-            "intensity": 1.0,
-            "duration": 5
+            "intensity": 0.7,
+            "duration": 7
         },
         "assist": {
-            "intensity": 1.0,
-            "duration": 5
+            "intensity": 0.3,
+            "duration": 20
         },
         "headshot": {
             "intensity": 1.0,
@@ -16,7 +16,7 @@
         },
         "death": {
             "intensity": 1.0,
-            "duration": 5
+            "duration": 20
         }
 
     }
