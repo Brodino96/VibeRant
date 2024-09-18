@@ -1,21 +1,14 @@
-/* ------------------------------------------------------------------ */
+/* ------------------------------------------------------------------ */    
 
-const Debug = new debug()
-const Config = require("../config.json")
-
-/* ------------------------------------------------------------------ */
-
-window.addEventListener("load", function () {
-    Debug.info("Page loaded")
+Config = null
+fetch('/src/config.json').then((response) => response.json()).then(function (json) {
+    Config = json
 })
 
-/* ------------------------------------------------------------------ */
-
-
-class debug {
-    success (str) { if (Config.debugMode) { console.log(`[SUCCESS] ${str}`) } }
-    error (str) { if (Config.debugMode) { console.log(`[ERROR] ${str}`) } }
-    info (str) { if (Config.debugMode) { console.log(`[INFO] ${str}`) } }
+const Debug = {
+    "success": function (str) { if (Config.debugMode) { console.log(`[SUCCESS] ${str}`) } },
+    "error": function (str) { if (Config.debugMode) { console.log(`[ERROR] ${str}`) } },
+    "info": function (str) { if (Config.debugMode) { console.log(`[INFO] ${str}`) } }
 }
 
 /* ------------------------------------------------------------------ */
