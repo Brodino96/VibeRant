@@ -26,37 +26,38 @@
             <div class="column">
                 <div class="generic_text">Uccisione</div>
                 <button class="generic_button" onclick="buttonClicked('kill')">OFF</button>
-                <div class="description_text">Intensità: 0</div>
-                <input type="range" class="generic_slider" id="kill_intensity" onchange="updateSlider('kill_intensity')" min="0" max="100" step="10" value="0">
-                <div class="description_text">Durata: 0</div>
-                <input type="range" class="generic_slider" id="kill_duration" onchange="updateSlider('kill_duration')" min="0" max="60" step="1" value="0">
+                
+                <div class="description_text" id="kill_intensity_description">Intensità: 0</div>
+                <input type="range" class="generic_slider" id="kill_intensity" oninput="updateSlider(this.value, 'kill_intensity', 'Intensità: ')" min="0" max="1" step="0.1" value="0">
+                <div class="description_text" id="kill_duration_description">Durata: 0</div>
+                <input type="range" class="generic_slider" id="kill_duration" oninput="updateSlider(this.value, 'kill_duration', 'Durata: ')" min="0" max="60" step="1" value="0">
             </div>
     
             <div class="column">
                 <div class="generic_text">Headshot</div>
                 <button class="generic_button" onclick="buttonClicked('headshot')">OFF</button>
-                <div class="description_text">Intensità: 0</div>
-                <input type="range" class="generic_slider" id="headshot_intensity" onchange="updateSlider('headshot_intensity')" min="0" max="100" step="10" value="0">
-                <div class="description_text">Durata: 0</div>
-                <input type="range" class="generic_slider" id="headshot_duration" onchange="updateSlider('headshot_duration')" min="0" max="60" step="1" value="0">
+                <div class="description_text" id="headshot_intensity_description">Intensità: 0</div>
+                <input type="range" class="generic_slider" id="headshot_intensity" oninput="updateSlider(this.value, 'headshot_intensity', 'Intensità: ')" min="0" max="1" step="0.1" value="0">
+                <div class="description_text" id="headshot_duration_description">Durata: 0</div>
+                <input type="range" class="generic_slider" id="headshot_duration" oninput="updateSlider(this.value, 'headshot_duration', 'Durata: ')" min="0" max="60" step="1" value="0">
             </div>
     
             <div class="column">
                 <div class="generic_text">Assist</div>
                 <button class="generic_button" onclick="buttonClicked('assist')">OFF</button>
-                <div class="description_text">Intensità: 0</div>
-                <input type="range" class="generic_slider" id="assist_intensity" onchange="updateSlider('assist_intensity')" min="0" max="100" step="10" value="0">
-                <div class="description_text">Durata: 0</div>
-                <input type="range" class="generic_slider" id="assist_duration" onchange="updateSlider('assist_duration')" min="0" max="60" step="1" value="0">
+                <div class="description_text" id="assist_intensity_description">Intensità: 0</div>
+                <input type="range" class="generic_slider" id="assist_intensity" oninput="updateSlider(this.value, 'assist_intensity', 'Intensità: ')" min="0" max="1" step="0.1" value="0">
+                <div class="description_text" id="assist_duration_description">Durata: 0</div>
+                <input type="range" class="generic_slider" id="assist_duration" oninput="updateSlider(this.value, 'assist_duration', 'Durata: ')" min="0" max="60" step="1" value="0">
             </div>
     
             <div class="column">
                 <div class="generic_text">Morte</div>
                 <button class="generic_button" onclick="buttonClicked('death')">OFF</button>
-                <div class="description_text">Intensità: 0</div>
-                <input type="range" class="generic_slider" id="death_intensity" onchange="updateSlider('death_intensity')" min="0" max="100" step="10" value="0">
-                <div class="description_text">Durata: 0</div>
-                <input type="range" class="generic_slider" id="death_duration" onchange="updateSlider('death_duration')" min="0" max="60" step="1" value="0">
+                <div class="description_text" id="death_intensity_description">Intensità: 0</div>
+                <input type="range" class="generic_slider" id="death_intensity" oninput="updateSlider(this.value, 'death_intensity', 'Intensità: ')" min="0" max="1" step="0.1" value="0">
+                <div class="description_text" id="death_duration_description">Durata: 0</div>
+                <input type="range" class="generic_slider" id="death_duration" oninput="updateSlider(this.value, 'death_duration', 'Durata: ')" min="0" max="60" step="1" value="0">
             </div>
 
         </div>
