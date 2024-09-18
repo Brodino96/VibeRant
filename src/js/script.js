@@ -1,7 +1,6 @@
 /* ------------------------------------------------------------------ */
 
-const Config = require("./config.json")
-let debug = new Debug()
+const Config = require("../config.json")
 
 let client
 let active = false
@@ -9,18 +8,18 @@ let active = false
 /* ------------------------------------------------------------------ */
 
 window.addEventListener("load", function () {
-    debug.info("Page loaded")
+    Debug.info("Page loaded")
 })
 
 /* ------------------------------------------------------------------ */
 
 async function vibrate(value) {
 
-    debug.info(`Intensity: ${value.intensity}, duration: ${value.duration}`)
+    Debug.info(`Intensity: ${value.intensity}, duration: ${value.duration}`)
     
     if (!checkConnections()) { return }
 
-    if (active) { return debug.info("A command is still being executed") }
+    if (active) { return Debug.info("A command is still being executed") }
 
     client.devices.forEach(device => {
         active = true
@@ -34,40 +33,34 @@ async function vibrate(value) {
 
 async function intifaceConnect() {
 
-    debug.info("Starting connection process")
+    Debug.info("Starting connection process")
 
     let connector = new Buttplug.ButtplugBrowserWebsocketClientConnector("ws://127.0.0.1:12345")
     client = new Buttplug.ButtplugClient("Toy")
     
     await client.connect(connector) // Wait for connection
 
-    debug.success("Connected")
+    Debug.success("Connected")
     
     client.addListener("deviceremoved", () => {
-        debug.info("Device disconnected")
+        Debug.info("Device disconnected")
     })
 }
 
 async function checkConnections () {
     if (client == null) {
-        debug.error("Software is not connected")
+        Debug.error("Software is not connected")
         return false
     }
 
     if (json.stringify(client.devices) == "[]") {
-        debug.error("No device connected")
+        Debug.error("No device connected")
         return false
     }
 
     return true
 }
 
-/* ------------------------------------------------------------------ */
 
-class Debug {
-    success (str) { if (Config.debugMode) { console.log(`[SUCCESS] ${str}`) } }
-    error (str) { if (Config.debugMode) { console.log(`[ERROR] ${str}`) } }
-    info (str) { if (Config.debugMode) { console.log(`[INFO] ${str}`) } }
-}
 
 /* ------------------------------------------------------------------ */
