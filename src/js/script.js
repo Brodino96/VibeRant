@@ -1,7 +1,5 @@
 /* ------------------------------------------------------------------ */
 
-const Config = require("../config.json")
-
 let client
 let active = false
 
