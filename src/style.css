@@ -1,0 +1,204 @@
+/* MAIN */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+:root {
+    --background: #151515;
+    --text: #dadada;
+    --main_color: #c922db;
+    --main_color_accent: #f178ff;
+    --main_color_dark: #8b1898;
+    --main_color_shadow: #500f57;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--background);
+}
+
+/* GENERIC */
+
+.generic_text {
+    color: var(--text);
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+/* From Uiverse.io by adamgiebl */ 
+.generic_button {
+    font-size: 15px;
+    padding: 0.7em 2.7em;
+    margin-bottom: 2em;
+    letter-spacing: 0.06em;
+    position: relative;
+    font-family: inherit;
+    border-radius: 0.6em;
+    overflow: hidden;
+    transition: all 0.3s;
+    line-height: 1.4em;
+    border: 2px solid var(--main_color);
+    background: linear-gradient(to right, var(--main_color_shadow) 1%, transparent 40%,transparent 60% , var(--main_color_shadow) 100%);
+    color: var(--main_color);
+    box-shadow: inset 0 0 10px var(--main_color_dark), 0 0 9px 3px var(--main_color_shadow);
+}
+  
+.generic_button:hover {
+    color: var(--main_color_accent);
+    box-shadow: inset 0 0 10px var(--main_color_dark), 0 0 9px 3px var(--main_color_shadow);
+    cursor: pointer;
+}
+  
+.generic_button:before {
+    content: "";
+    position: absolute;
+    left: -4em;
+    width: 4em;
+    height: 100%;
+    top: 0;
+    transition: transform .4s ease-in-out;
+    background: linear-gradient(to right, transparent 1%, var(--main_color_shadow) 40%,var(--main_color_shadow) 60% , transparent 100%);
+}
+  
+.generic_button:hover:before {
+    transform: translateX(15em);
+}
+
+/* HEADER */
+
+#header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* COLUMNS */
+
+#columns {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 2em;
+}
+
+/* SLIDERS */
+
+.description_text {
+    text-align: center;
+    font-size: 2em;
+    color: var(--text);
+    font-weight: 400;
+}
+
+.generic_slider {
+    width: 20em;
+    height: 15px;
+    margin-bottom: 2em;
+    -webkit-appearance: none;
+    background: #111;
+    outline: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 1);
+}
+
+.generic_slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: var(--main_color);
+    cursor: pointer;
+    border: 4px solid #333;
+    box-shadow: -407px 0 0 400px var(--main_color);
+}
+
+/*
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: red;
+    margin: 0 auto;
+}
+
+.main-text {
+    margin-top: 20px;
+    font-size: 24px;
+    padding: 10px;
+    border: 2px solid black;
+    display: inline-block;
+}
+
+.columns {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text-box {
+    width: 100px;
+    height: 50px;
+    border: 2px solid black;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+.red-button {
+    width: 100px;
+    height: 40px;
+    background-color: red;
+    color: white;
+    border: none;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.slider {
+    width: 100px;
+    height: 10px;
+    background-color: yellow;
+}
+
+/*
