@@ -72,6 +72,14 @@ body {
     transform: translateX(15em);
 }
 
+/* CONNECT */
+
+#connect {
+    position: absolute;
+    top: 3vw;
+    right: 5vw
+}
+
 /* HEADER */
 
 #header {

@@ -17,13 +17,22 @@ function updateConfig (value, target) {
 function buttonClicked (btn) {
     switch (btn) {
         case "main":
-            if (!intifaceConnect()) {
-                // Notify that it failed
-                return
+            if (Active) {
+                document.getElementById("main_button").innerHTML = "OFF"
+                Active = false
+            } else {
+                document.getElementById("main_button").innerHTML = "ON"
+                Active = true
             }
-            document.getElementById("main_button").innerHTML = "ON"
             break
+
+        case "connect":
+            intifaceConnect()
     }
+}
+
+function notify (text) {
+    // write a notification function
 }
 
 /* ------------------------------------------------------------------ */

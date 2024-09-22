@@ -1,7 +1,7 @@
 /* ------------------------------------------------------------------ */
 
-let client
-let active = false
+Active = false
+let client = null
 
 /* ------------------------------------------------------------------ */
 
@@ -11,48 +11,47 @@ async function vibrate(value) {
     
     if (!checkConnections()) { return }
 
-    if (active) { return Debug.info("A command is still being executed") }
+    if (Active) { return Debug.info("A command is still being executed") }
 
     client.devices.forEach(device => {
-        active = true
+        Active = true
         device.vibrate(value.intensity)
         setTimeout(async () => {
             await device.stop()
-            active = false
+            Active = false
         }, value.duration * 1000)
     })
 }
 
 async function intifaceConnect() {
+    
+    if (client != null && client.connected) {
+        return Debug.success("Intiface is alredy connected")
+    }
 
     Debug.info("Starting connection process")
-
+    
     let connector = new Buttplug.ButtplugBrowserWebsocketClientConnector("ws://127.0.0.1:12345")
     client = new Buttplug.ButtplugClient("Toy")
     
-    await client.connect(connector) // Wait for connection
-
+    try {
+        await client.connect(connector)
+    } catch (e) {
+        Debug.error(`Detected: ${e}`)
+        return notify("Error connecting")
+    }
+    
     Debug.success("Connected")
     
-    client.addListener("deviceremoved", () => {
+    client.addListener("deviceremoved", function () {
         Debug.info("Device disconnected")
     })
 
-    return true
-}
+    client.addListener("deviceadded", function () {
+        Debug.info("Device added")
+    })
 
-async function checkConnections () {
-    if (client == null) {
-        Debug.error("Software is not connected")
-        return false
-    }
-
-    if (json.stringify(client.devices) == "[]") {
-        Debug.error("No device connected")
-        return false
-    }
-
-    return true
+    notify("Connected")
 }
 
 /* ------------------------------------------------------------------ */
