@@ -1,21 +1,27 @@
-const socket = new WebSocket('ws://localhost:3000');
+let socket = null
 
-// Evento quando la connessione è aperta
-socket.addEventListener('open', () => {
-    console.log('Connesso al WebSocket server');
-});
+function webSocketConnect() {
 
-// Evento quando si ricevono messaggi dal server
-socket.addEventListener('message', (event) => {
-    console.log('Dati ricevuti dal server:', event.data);
-});
+    if (socket != null) {
+        return Debug.info("WebSocket was alredy on")
+    }
 
-// Evento quando la connessione è chiusa
-socket.addEventListener('close', () => {
-    console.log('Connessione chiusa');
-});
-
-// Evento in caso di errore
-socket.addEventListener('error', (error) => {
-    console.error('Errore WebSocket:', error);
-});
+    socket = new WebSocket("ws://localhost:3000")
+    
+    socket.addEventListener("open", function () {
+        Debug.success("Connected to the WebSocket server")
+    })
+    
+    socket.addEventListener("message", function (event) {
+        Debug.info("Data recived from the server:", event.data)
+        handleWebsocketMessage(event)
+    })
+    
+    socket.addEventListener("close", function () {
+        Debug.info("Connection closed")
+    })
+    
+    socket.addEventListener("error", function (error) {
+        Debug.error("WebSocket:", error)
+    })
+}
