@@ -1,2 +1,2 @@
 # VibeRant
-A valorant integration that makes sex toys vibrate
+An app that will let you make yourself vibrate when something happens in valorant

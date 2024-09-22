@@ -4,19 +4,23 @@
     "events": {
         "kill": {
             "intensity": 0.7,
-            "duration": 7
+            "duration": 7,
+            "enabled": true
         },
         "assist": {
             "intensity": 0.3,
-            "duration": 20
+            "duration": 20,
+            "enabled": false
         },
         "headshot": {
             "intensity": 1.0,
-            "duration": 5
+            "duration": 5,
+            "enabled": true
         },
         "death": {
             "intensity": 1.0,
-            "duration": 20
+            "duration": 20,
+            "enabled": true
         }
 
     }

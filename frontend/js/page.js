@@ -29,6 +29,15 @@ function buttonClicked (btn) {
         case "connect":
             intifaceConnect()
             webSocketConnect()
+            break
+
+        default: 
+            Config["events"][btn]["enabled"] = !Config["events"][btn]["enabled"]
+            if (Config["events"][btn]["enabled"]) {
+                document.getElementById(`${btn}_button`).innerHTML = "ON"
+            } else {
+                document.getElementById(`${btn}_button`).innerHTML = "OFF"
+            }
     }
 }
 
@@ -48,6 +57,12 @@ window.addEventListener("load", function () {
         
         document.getElementById(intensityId).value = value["intensity"]
         document.getElementById(durationId).value = value["duration"]
+
+        if (value["enabled"]) {
+            document.getElementById(`${key}_button`).innerHTML = "ON"
+        } else {
+            document.getElementById(`${key}_button`).innerHTML = "OFF"
+        }
     }
 })
 
