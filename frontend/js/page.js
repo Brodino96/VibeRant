@@ -28,6 +28,7 @@ function buttonClicked (btn) {
 
         case "connect":
             intifaceConnect()
+            webSocketConnect()
     }
 }
 
