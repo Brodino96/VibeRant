@@ -1,7 +1,7 @@
 /* ------------------------------------------------------------------ */    
 
 Config = null
-fetch('/src/config.json').then((response) => response.json()).then(function (json) {
+fetch('/frontend/config.json').then((response) => response.json()).then(function (json) {
     Config = json
 })
 
