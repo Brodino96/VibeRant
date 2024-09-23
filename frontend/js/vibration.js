@@ -5,7 +5,7 @@ let client = null
 
 /* ------------------------------------------------------------------ */
 
-async function vibrate(value) {
+async function vibrate(data) { 
 
     Debug.info(`Intensity: ${value.intensity}, duration: ${value.duration}`)
     

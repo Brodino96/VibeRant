@@ -14,7 +14,7 @@ function webSocketConnect() {
     
     socket.addEventListener("message", function (event) {
         Debug.info("Data recived from the server:", event.data)
-        handleWebsocketMessage(event)
+        vibrate(event.data)
     })
     
     socket.addEventListener("close", function () {
